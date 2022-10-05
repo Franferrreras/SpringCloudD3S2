@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+      - id: taller1
+        uri: http://localhost:8081/
+        predicates: 
+        - Path=/hola-mundo/**
+      discovery:
+        locator:
+          enabled: true
+  main:
+    web-application-type: reactive
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
