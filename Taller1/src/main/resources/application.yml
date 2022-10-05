@@ -1,9 +1,10 @@
-server:
-  port: 8081
-    
 spring:
   application:
     name: taller1
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8080
 management:
   endpoints:
     web:
